@@ -3,6 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    (function () {
+      var path = location.pathname + location.search;
+      if (location.hash) history.replaceState(null, "", path);
+    })();
+  </script>
   <title>FocusMail — AI-Powered Email Prioritization</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -208,6 +215,7 @@
     <li><a href="#features">Features</a></li>
     <li><a href="#how-it-works">How It Works</a></li>
     <li><a href="#faq">FAQ</a></li>
+    <li><a href="support.html">Support</a></li>
     <li><a href="#get-started" class="nav-cta">Add to Chrome</a></li>
   </ul>
 </nav>
@@ -397,11 +405,17 @@
 
 <footer>
   <div class="footer-logo">FocusMail</div>
-  <div class="footer-copy">© 2025 FocusMail. All rights reserved.</div>
-  <div class="footer-links"><a href="#features">Features</a><a href="#how-it-works">How It Works</a><a href="#faq">FAQ</a></div>
+  <div class="footer-copy">© 2026 FocusMail. All rights reserved.</div>
+  <div class="footer-links"><a href="#features">Features</a><a href="#how-it-works">How It Works</a><a href="#faq">FAQ</a><a href="support.html">Support</a></div>
 </footer>
 
 <script>
+  window.addEventListener("load", function () {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    requestAnimationFrame(function () {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    });
+  });
   document.querySelectorAll(".faq-question").forEach(btn => {
     btn.addEventListener("click", () => {
       const item = btn.closest(".faq-item");
